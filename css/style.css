@@ -1,0 +1,102 @@
+* {
+  -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2C2C2C;
+}
+
+::placeholder {
+  color: #F0D6C3;
+}
+
+.search {
+  margin-top: 40px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.search input[type=text] {
+  padding: 6px;
+  border: 2px solid #BE5301;
+  border-radius: 5px;
+  font-size: 30px;
+  background-color: #333233;
+  color: #F6B485;
+  width: 100%;
+  height: 100%;
+}
+
+.search input[type=text]:focus {
+  outline: none;
+   box-shadow: 0 0 5px #BE5301;
+}
+
+.mainContent {
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 200px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 30%;
+  padding: 1.65%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.optionSubmit input[type=submit] {
+  margin-top: 20px;
+  background: #555456;
+  border: 2px solid #ec6607;
+  border-radius: 10px;
+  padding: 8px 20px;
+  cursor: pointer;
+  color: #ec6607;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+}
+
+.optionSubmit input[type=submit]:hover {
+  box-shadow: 0 0 5px #BE5301;
+}
+
+.optionSubmit input[type=submit]:active {
+  background: #6F6E6D;
+}
+
+.optionText {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #BE5301;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

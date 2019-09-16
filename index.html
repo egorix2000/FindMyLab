@@ -2,51 +2,45 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/checkboxStyle.css"/>
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #585858;
-}
-
-::placeholder {
-  color: #F0D6C3;
-}
-
-.topnav {
-  margin-top: 15px;
-  margin-right: 5%;
-  margin-left: 5%;
-}
-
-.topnav input[type=text] {
-  padding: 6px;
-  border: 2px solid #BE5301;
-  border-radius: 5px;
-  font-size: 17px;
-  background-color: #1C1C1C;
-  color: #F6B485;
-  width: 100%;
-  height: 100%;
-}
-
-.topnav input[type=text]:focus {
-    outline: none;
-    box-shadow: 0 0 5px #BE5301;
-}
-
-</style>
 </head>
 <body>
 
-<div class="topnav">
-  <input type="text" placeholder="Search..">
+<div class="search">
+  <input type="text" placeholder="Search...">
+</div>
+
+<div class="mainContent row">
+  <div class="column">
+
+    <div class="optionText">
+      Options
+    </div>
+
+    <div class="options">
+      <label class="container">Hyperbulbulator
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Sheep sheet
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Computers
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+    <div class="optionSubmit">
+      <input type="submit" value="Find!">
+    </div>
+
+  </div>
+  <div class="column"></div>
+  <div class="column"></div>
 </div>
 
 
