@@ -4,18 +4,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="css/checkboxStyle.css"/>
+<script src="js/script.js"></script>
 
 </head>
 <body>
 
 <div class="search">
-  <input type="text" placeholder="Search...">
+  <input id="searchInput" type="text" placeholder="Search...">
 </div>
 
 <div class="mainContent row">
   <div class="column">
 
-    <div class="optionText">
+    <div class="text">
       Options
     </div>
 
@@ -35,12 +36,18 @@
     </div>
 
     <div class="optionSubmit">
-      <input type="submit" value="Find!">
+      <input id="findLabButton" type="submit" value="Find!" onclick="displayTop();">
     </div>
 
   </div>
   <div class="column"></div>
-  <div class="column"></div>
+  <div class="column">
+    <div class="text">
+      Top
+    </div>
+    <div class="top">
+    </div>
+  </div>
 </div>
 
 
