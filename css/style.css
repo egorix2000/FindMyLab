@@ -4,6 +4,11 @@
   --orangeMainColor: #BE5301;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 
 * {
     -moz-box-sizing: border-box;
