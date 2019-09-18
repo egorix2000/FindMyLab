@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FySci</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="css/checkboxStyle.css"/>
+<script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/script.js"></script>
 
 </head>
@@ -14,39 +16,62 @@
 </div>
 
 <div class="mainContent row">
-  <div class="column">
+  <div class="column orangeBorder">
 
-    <div class="text">
-      Options
+    <div class="textOptionHeader">
+      Select options
     </div>
 
     <div class="options">
-      <label class="container">Hyperbulbulator
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container">Sheep sheet
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-      <label class="container">Computers
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
+      <div id="city" class="selectDiv">
+        <div class="text">
+          City
+        </div>
+        <select id="citySelect" class="optionSelect">
+          <option hidden disabled selected value="empty"> Select city </option>
+        </select>
+      </div>
+
+      <div id="university" class="selectDiv">
+        <div class="text">
+          University
+        </div>
+        <select id="universitySelect" class="optionSelect">
+          <option hidden disabled selected value="empty"> Select university </option>
+        </select>
+      </div>
+
+      <div id="Subject" class="selectDiv">
+        <div class="text">
+          Subject
+        </div>
+        <select id="subjectSelect" class="optionSelect">
+          <option hidden disabled selected value="empty"> Select subject </option>
+        </select>
+      </div>
+
     </div>
 
     <div class="optionSubmit">
-      <input id="findLabButton" type="submit" value="Find!" onclick="displayTop();">
+      <input id="findLabButton" type="submit" value="Find!">
     </div>
 
   </div>
-  <div class="column"></div>
-  <div class="column">
-    <div class="text">
-      Top
+
+  <div class="column orangeBorder topLabsColumn">
+    <div class="textTopHeader">
+      Top laboratories
     </div>
-    <div class="top">
-    </div>
+    <table id="topLabs" class="top">
+      <tr>
+        <th>Rank</th>
+        <th>Laboratory</th> 
+        <th>University</th>
+        <th>Academic Department</th>
+      </tr>
+      <tbody>
+      </tbody>
+    </table>
   </div>
 </div>
 
