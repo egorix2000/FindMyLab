@@ -152,7 +152,7 @@ function displayTop(topLabId) {
     labDiv += "<td>" + (i+1) + "</td>";
     labDiv += "<td>" + top[i].name + "</td>";
     labDiv += "<td>" + top[i].university + "</td>";
-    labDiv += "<td>" + top[i].academicDepartment + "</td>";
+    labDiv += "<td>" + top[i].keywords + "</td>";
     labDiv += "</tr>";
     $('#' + topLabId).append(labDiv);
   }
