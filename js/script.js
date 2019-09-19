@@ -1,9 +1,10 @@
-var url = "your url";
+var url = "http://127.0.0.1:5000";
 
 function getCities() {
   var cities;
+
   $.getJSON(
-    url + "/method1", 
+    url + "/cities", 
     function(data) {
       cities = data.cities;
     });
@@ -15,12 +16,14 @@ function getUniversities(city) {
   var dataToServer = JSON.stringify({
       city: city,
   });
-  $.getJSON(
-    url + "/method1", 
-    dataToServer, 
+
+  $.post( 
+    url + "/universities", 
+    dataToServer,
     function(data) {
       universities = data.universities;
-    });
+  });
+
   return universities;
 }
 
@@ -28,14 +31,15 @@ function getSubjects(city, university) {
   var subjects;
   var dataToServer = JSON.stringify({
       city: city,
-      university: university,
+      organisation: university,
   });
-  $.getJSON(
-    url + "/method1", 
-    dataToServer, 
+
+  $.post( 
+    url + "/subjects", 
+    dataToServer,
     function(data) {
       subjects = data.subjects;
-    });
+  });
   return subjects;
 }
 
@@ -43,16 +47,17 @@ function getTopLaboratories(city, university, subject, search) {
   var topLabs;
   var dataToServer = JSON.stringify({
       city: city,
-      university: university,
-      ubject: subject,
-      search: search
+      organisation: university,
+      subject: subject,
+      searchText: search
   });
-  $.getJSON(
-    url + "/method1", 
-    dataToServer, 
+
+  $.post( 
+    url + "/top", 
+    dataToServer,
     function(data) {
-      topLabs = data.topLabs;
-    });
+      topLabs = data.laboratories;
+  });
   return topLabs;
 }
 
@@ -69,13 +74,13 @@ function setOptions(selectorId, optionsArray) {
 
 function displayTop(topLabId) {
   //get top
-  /*var top = getTopLaboratories(
+  var top = getTopLaboratories(
     $('#citySelect').find(":selected").val(),
     $('#universitySelect').find(":selected").val(),
     $('#subjectSelect').find(":selected").val(),
-    $('#searchInput').val());*/
+    $('#searchInput').val());
 
-  var top = [
+  /*var top = [
   {
     id: "b1",
     name:"BestLab1",
@@ -137,7 +142,7 @@ function displayTop(topLabId) {
     academicDepartment :"Natural sciences"
   },
 
-  ];
+  ];*/
 
   //clear previous top
   $('#' + topLabId).find('tr').slice(1).remove();
@@ -158,26 +163,31 @@ function displayTop(topLabId) {
 }
 
 $(document).ready(function() {
-    //get all cities array
-    //var all_cities = getCities();
 
-    all_cities = ["New York", "Minsk", "Moscow", "Milan"];
+    $.ajaxSetup({
+    async: false
+    });
+
+    //get all cities array
+    var all_cities = getCities();
+
+    //all_cities = ["New York", "Minsk", "Moscow", "Milan"];
     setOptions("citySelect", all_cities);
 
     //get all universities array
-    /*var all_universities = getUniversities(
-      $('#citySelect').find(":selected").val());*/
+    var all_universities = getUniversities(
+      $('#citySelect').find(":selected").val());
 
-    all_universities = ["MIT", "BSU", "BSUIR", "BSMU", "BSPU"];
+    //var all_universities = ["MIT", "BSU", "BSUIR", "BSMU", "BSPU"];
     setOptions("universitySelect", all_universities);
 
     //get all subject array
-    /*var all_subjects = getSubjects(
+    var all_subjects = getSubjects(
       $('#citySelect').find(":selected").val(),
       $('#universitySelect').find(":selected").val(),
-    );*/
+    );
 
-    all_subjects = ["Math", "Physics", "Computer Science", "Algorithm", "Medicine", "Chemistry"];
+    //var all_subjects = ["Math", "Physics", "Computer Science", "Algorithm", "Medicine", "Chemistry"];
     setOptions("subjectSelect", all_subjects);
 
 
@@ -196,19 +206,19 @@ $(document).ready(function() {
     $( "#citySelect" ).change(function () {
       if($(this).val() != null) {
         //get universities array
-        /*var all_universities = getUniversities(
-          $('#citySelect').find(":selected").val());*/
+        var universities = getUniversities(
+          $('#citySelect').find(":selected").val());
 
-        universities = ["MIT", "BSU", "BSUIR", "BSMU"];
+        //universities = ["MIT", "BSU", "BSUIR", "BSMU"];
         setOptions("universitySelect", universities);
 
         //get subject array
-        /*var all_subjects = getSubjects(
+        var subjects = getSubjects(
           $('#citySelect').find(":selected").val(),
           $('#universitySelect').find(":selected").val(),
-        );*/
+        );
 
-        subjects = ["Math", "ComputerScience"];
+        //subjects = ["Math", "ComputerScience"];
         setOptions("subjectSelect", subjects);
       }
 
@@ -217,12 +227,12 @@ $(document).ready(function() {
     $( "#universitySelect" ).change(function () {
       if($(this).val() != null) {
         //get subject array
-        /*var all_subjects = getSubjects(
+        var subjects = getSubjects(
           $('#citySelect').find(":selected").val(),
           $('#universitySelect').find(":selected").val(),
-        );*/
+        );
 
-        subjects = ["Math", "ComputerScience"];
+        //subjects = ["Math", "ComputerScience"];
         setOptions("subjectSelect", subjects);
       }
 
