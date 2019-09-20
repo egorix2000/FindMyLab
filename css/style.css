@@ -68,7 +68,7 @@ body {
   width: 60.66%;
   margin-left: 6%;
   padding: 0px;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 /* Clear floats after the columns */
@@ -108,9 +108,11 @@ body {
 }
 
 .textTopHeader {
+  width: 100%;
   font-size: 24px;
   padding: 1.65%;
   color: var(--textColor);
+  text-align: center;
 }
 
 .orangeBorder {
@@ -136,30 +138,65 @@ body {
 }
 
 .top {
+  top: 50px;
   color: var(--textColor);
   width: 100%;
   border-collapse: collapse;
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 0;
 }
 
-.top tr:nth-child(even) {
+.topLabItem {
+  padding: 8px;
+  border-top: 1px solid #BE5301;
+  border-bottom: 1px solid #BE5301;
+}
+
+.topLabItem:nth-child(even) {
   background-color: #393939;
 }
 
-.top tr:not(:first-child):hover {
+.topLabItem:hover {
   background-color: #161616;
   cursor: pointer;
 }
 
-.top td {
-  border: 1px solid #BE5301;
-  padding: 8px;
+.topLabName {
+  font-size: 20px;
 }
 
-.top th {
-  padding-left: 5px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border: 1px solid #BE5301;
-  text-align: left;
+.topLabName span {
+  display: inline-block;
+  border-bottom: 1px solid #BE5301;
+  padding-bottom: 1px;
+}
+
+.topUniversityName {
+  padding-top: 10px;
+  padding-left: 7%;
+}
+
+.topUniversityName span {
+  font-style: italic;
+}
+
+.topResearchName {
+  padding-top: 10px;
+  padding-left: 7%;
+}
+
+.topResearchName ul {
+  margin-top: 2px;
+  list-style: none;
+}
+
+.topResearchName ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #BE5301; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 

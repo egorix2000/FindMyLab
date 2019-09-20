@@ -143,23 +143,34 @@ function displayTop(topLabId) {
   },
 
   ];*/
-
   //clear previous top
-  $('#' + topLabId).find('tr').slice(1).remove();
+  $('#' + topLabId).empty();
 
   for (var i = 0; i < top.length; i++) {
-    labDiv = "<tr href='laboratory.html'>";
-    labDiv += "<td>" + (i+1) + "</td>";
-    labDiv += "<td>" + top[i].name + "</td>";
-    labDiv += "<td>" + top[i].university + "</td>";
-    labDiv += "<td>" + top[i].keywords + "</td>";
-    labDiv += "</tr>";
+    labDiv = "<div class='topLabItem' href='laboratory.html'>";
+    labDiv += "   <div class='topLabName'><span>" + top[i].name + "</span></div>";
+    labDiv += "   <div class='topUniversityName'>Organisation: <span>" + top[i].university + "</span></div>";
+
+    top[i].keywords = top[i].keywords.split(", ");
+
+    labDiv += "   <div class='topResearchName'>Research field: ";
+    labDiv += "       <ul>";
+    for (var keywordIndex = 0; keywordIndex < top[i].keywords.length; keywordIndex++) {
+      
+      labDiv += "          <li>" + top[i].keywords[keywordIndex] + "</li>";
+    }
+    labDiv += "       </ul>";
+    labDiv += "   </div>"
+
+    labDiv += "</div>";
     $('#' + topLabId).append(labDiv);
   }
 
   $('#topLabs tr').on("click", function() {
       window.location.href = 'laboratory.html';
   });
+
+  $('#topLabs').scrollTop(0);
 }
 
 $(document).ready(function() {
