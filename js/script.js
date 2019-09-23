@@ -147,7 +147,7 @@ function displayTop(topLabId) {
   $('#' + topLabId).empty();
 
   for (var i = 0; i < top.length; i++) {
-    labDiv = "<div class='topLabItem' href='laboratory.html'>";
+    labDiv = "<div class='topLabItem'>";
     labDiv += "   <div class='topLabName'><span>" + top[i].name + "</span></div>";
     labDiv += "   <div class='topUniversityName'>Organisation: <span>" + top[i].university + "</span></div>";
 
@@ -166,7 +166,7 @@ function displayTop(topLabId) {
     $('#' + topLabId).append(labDiv);
   }
 
-  $('#topLabs tr').on("click", function() {
+  $('.topLabItem').on("click", function() {
       window.location.href = 'laboratory.html';
   });
 

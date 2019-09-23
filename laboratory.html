@@ -1,35 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>FySci</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<link href="js/lightbox2-master/src/css/lightbox.css" rel="stylesheet">
+<link rel="stylesheet" href="js/baguetteBox.js-master/dist/baguetteBox.min.css">
+<link rel="stylesheet" type="text/css" href="css/laboratory_style.css"/>
 
+
+<script src="js/jquery-3.4.1.min.js"></script>
+
+<script src="js/lightbox2-master/src/js/lightbox.js"></script>
+<script src="js/masonry-docs/masonry.pkgd.min.js"></script>
+<script src="js/baguetteBox.js-master/dist/baguetteBox.min.js"></script>
+
+<script src="js/laboratory_script.js"></script>
 
 </head>
 <body>
 
-<style type="text/css">
-:root {
-  --backgroundDarkColor: #2C2C2C;
-  --textColor: #F6B485;
-  --orangeMainColor: #BE5301;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--backgroundDarkColor);
-}
-
-.textHeader {
-  font-size: 36px;
-  padding: 20;
-  color: var(--textColor);
-}
-</style>
-
-<div class="textHeader">
-  This is demo version!
+<div class="LabNameHeader">
+  <span>Space Lab<span>
 </div>
 
+<div class="info">
+	<div class="labInfo">
+		<div id="labOrganisation" class="labInfoItem"><span class="itemName">Organisation:</span> Scoltech</div>
+		<div id="labDepartment" class="labInfoItem"><span class="itemName">Department:</span> High math</div>
+		<div id="labField" class="labInfoItem"><span class="itemName">Field:</span> Statistics</div>
+		<div id="labSubfield" class="labInfoItem"><span class="itemName">Subfield:</span> Gaussian distribution</div>
+		<div id="labKeywords" class="labInfoItem"><span class="itemName">Keywords:</span> Scoltech, Statistics, Math</div>
+		<div id="labWebPage" class="labInfoItem"><span class="itemName">Webpage:</span> <a href="https://www.skoltech.ru/en">www.scoltech.ru</a></div>
+		<div id="labVacancies" class="labInfoItem"><span class="itemName">Open vacancies:</span> engeneer, c++ developer</div>
+		<div id="labDescription" class="labInfoItem"><span class="itemName">Description:</span> Super lab near metro. High salary, friendly staff, modern technologies. Was founded in 2017. Don't miss the chance: join our team right now!</div>
+	</div>
+	<div class="labHeadInfo">
+		<div id="headHeader" class="labInfoItem">Head of the lab</div>
+		<div id="headPhoto" class="labInfoItem"><img src="images/test_head_photo.jpg"></div>
+		<div id="headName" class="labInfoItem">Ivan Ivanovich</div>
+		<div id="headInfo" class="labInfoItem">Phd in mathematics and computer science</div>
+	</div>
+</div>
+<hr>
+
+<div class="gallery">
+		<h2 class="galleryHeader">Gallery</h2>
+		<div class="center">
+			<div class="grid">
+			  <div class="grid-item">
+			  	<a href="images/test_gallery/test_lab_1.jpg" data-caption="">
+			  		<img class="gallery-image" src="images/test_gallery/test_lab_1.jpg">
+    			</a>
+			  </div>
+			  <div class="grid-item">
+			  	<a href="images/test_gallery/test_lab_2.jpg" data-caption="">
+			  		<img class="gallery-image" src="images/test_gallery/test_lab_2.jpg">
+    			</a>
+			  </div>
+			  <div class="grid-item grid-item-2">
+			  	<a href="images/test_gallery/test_lab_3.jpg" data-caption="">
+			  		<img class="gallery-image" src="images/test_gallery/test_lab_3.jpg">
+    			</a>
+			  </div>
+			  <div class="grid-item">
+			  	<a href="images/test_gallery/test_lab_4.jpg" data-caption="">
+			  		<img class="gallery-image" src="images/test_gallery/test_lab_4.jpg">
+    			</a>
+			  </div>
+			  <div class="grid-item">
+			  	<a href="images/test_gallery/test_lab_5.jpg" data-caption="">
+			  		<img class="gallery-image" src="images/test_gallery/test_lab_5.jpg">
+    			</a>
+			  </div>
+			  <div class="grid-item">
+			  	<a href="images/test_gallery/test_lab_6.jpg" data-caption="">
+			  		<img class="gallery-image" src="images/test_gallery/test_lab_6.jpg">
+    			</a>
+			  </div>
+			  <div class="grid-item">
+			  	<a href="images/test_gallery/test_lab_7.jpg" data-caption="">
+			  		<img class="gallery-image" src="images/test_gallery/test_lab_7.jpg">
+    			</a>
+			  </div>
+			  <div class="grid-item">
+			  	<a href="images/test_gallery/test_lab_8.jpg" data-caption="">
+			  		<img class="gallery-image" src="images/test_gallery/test_lab_8.jpg">
+    			</a>
+			  </div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
