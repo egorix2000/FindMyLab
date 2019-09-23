@@ -55,19 +55,23 @@ body {
 }
 
 
-.column {
+.optionsColumn {
   float: left;
   width: 33.33%;
   padding: 1.65%;
   height: 60vh;
   position: relative;
+  overflow-y: hidden;
 }
 
 
 .topLabsColumn {
+  float: left;
   width: 60.66%;
   margin-left: 6%;
   padding: 0px;
+  height: 60vh;
+  position: relative;
   overflow-y: hidden;
 }
 
@@ -79,7 +83,7 @@ body {
 
 .optionSubmit input[type=submit] {
   position:absolute;
-  bottom: 10px;
+  bottom: 0px;
   right: 10px;
   background: #444444;
   border: 2px solid #ec6607;
@@ -106,14 +110,6 @@ body {
   color: var(--textColor);
 }
 
-.textTopHeader {
-  width: 100%;
-  font-size: 24px;
-  padding: 1.65%;
-  color: var(--textColor);
-  text-align: center;
-}
-
 .orangeBorder {
   border: 2px solid #BE5301;
   border-radius: 10px;
@@ -134,6 +130,31 @@ body {
   background-color: black;
   margin-left: auto;
   width: 50%;
+}
+
+.subfields {
+  margin-top: 20px;
+}
+
+.subfieldsHeader {
+  color: var(--textColor);
+}
+
+.subfieldsOptions {
+  width: 100%;
+  margin-top: 10px; 
+  overflow-y: scroll;
+  top: 215px;
+  position: absolute;
+  bottom: 0;
+}
+
+.textTopHeader {
+  width: 100%;
+  font-size: 24px;
+  padding: 1.65%;
+  color: var(--textColor);
+  text-align: center;
 }
 
 .top {
