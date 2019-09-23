@@ -12,3 +12,10 @@ window.onload = function() {
       });
     });
 //end of setup
+
+
+$(document).ready(function() {
+	$("#backButton").click(function () {
+      window.location.href = 'index.html';
+    });
+});

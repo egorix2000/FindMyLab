@@ -15,8 +15,28 @@ body {
   	background-color: var(--backgroundDarkColor);
 }
 
+.backToMain input[type=submit] {
+	margin-left: 5%;
+	margin-top: 10px;
+	background: #444444;
+	border: 1px solid #ec6607;
+	border-radius: 5px;
+	cursor: pointer;
+	color: var(--textColor);
+	font-size: 20px;
+	text-align: center;
+}
+
+.backToMain input[type=submit]:hover {
+  box-shadow: 0 0 5px #BE5301;
+}
+
+.backToMain input[type=submit]:active {
+  background: #6F6E6D;
+}
+
 .LabNameHeader {
-  	margin-top: 40px;
+  	margin-top: 20px;
   	margin-left: 10%;
   	font-size: 36px;
   	padding: 20;
