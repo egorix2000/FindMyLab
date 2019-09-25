@@ -81,15 +81,14 @@ body {
 
 .optionSubmit input[type=submit] {
   position:absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0;
+  right: 15px;
   background: #444444;
   border: 2px solid #ec6607;
   border-radius: 10px;
   padding: 8px 20px;
   cursor: pointer;
   color: #FFFFFF;
-  display: inline-block;
   font-size: 20px;
   text-align: center;
 }
@@ -123,9 +122,10 @@ body {
   background-color: black;
   margin-left: auto;
   width: 50%;
+  position: relative;
 }
 
-.subfields {
+#subfields {
   margin-top: 20px;
 }
 
@@ -133,13 +133,14 @@ body {
   color: #FFFFFF;
 }
 
-.subfieldsOptions {
+#subfieldsOptions {
   width: 100%;
   margin-top: 10px; 
   overflow-y: scroll;
   top: 215px;
   position: absolute;
   bottom: 0;
+  visibility: hidden;
 }
 
 .textTopHeader {

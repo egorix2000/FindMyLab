@@ -8,7 +8,6 @@ function getCities() {
     function(data) {
       cities = data.cities;
     });
-  cities = ["Moscow", "Mexico"];
   return cities;
 }
 
@@ -60,13 +59,14 @@ function getSubsubjects (subject) {
     return subsubjects;
 }
 
-function getTopLaboratories(city, university, subject, search) {
+function getTopLaboratories(city, university, subject, search, subfields) {
   var topLabs;
   var dataToServer = JSON.stringify({
       city: city,
       organisation: university,
       subject: subject,
-      searchText: search
+      searchText: search,
+      subfields: subfields
   });
 
   $.post( 
@@ -89,13 +89,23 @@ function setOptions(selectorId, optionsArray) {
   }
 }
 
+function clearById(id) {
+  $('#' + id).empty();
+}
+
 function displayTop(topLabId) {
+
+  var subfieldsArray = $('#subfieldsOptions').find("input:checkbox:checked").map(function(){
+      return $(this).val();
+  }).get();
+
   //get top
   var top = getTopLaboratories(
     $('#citySelect').find(":selected").val(),
     $('#universitySelect').find(":selected").val(),
     $('#subjectSelect').find(":selected").val(),
-    $('#searchInput').val());
+    $('#searchInput').val(),
+    subfieldsArray);
 
   /*var top = [
   {
@@ -206,7 +216,7 @@ $(document).ready(function() {
     var all_universities = getUniversities(
       $('#citySelect').find(":selected").val());
 
-    //var all_universities = ["MIT", "BSU", "BSUIR", "BSMU", "BSPU"];
+    //all_universities = ["MIT", "BSU", "BSUIR", "BSMU", "BSPU"];
     setOptions("universitySelect", all_universities);
 
     //get all subject array
@@ -231,13 +241,14 @@ $(document).ready(function() {
       displayTop("topLabs");
     });
 
+    //city select triggen
     $( "#citySelect" ).change(function () {
       if($(this).val() != null) {
         //get universities array
         var universities = getUniversities(
           $('#citySelect').find(":selected").val());
 
-        //universities = ["MIT", "BSU", "BSUIR", "BSMU"];
+        //universities = ["MIT", "BSU", "BSUIR", "Skoltech"];
         setOptions("universitySelect", universities);
 
         //get subject array
@@ -248,10 +259,16 @@ $(document).ready(function() {
 
         //subjects = ["Math", "ComputerScience"];
         setOptions("subjectSelect", subjects);
+
+        //hide subfields
+        if ($('#subjectSelect').find(":selected").val() == 'empty') {
+          $("#subfieldsOptions").css("visibility", "hidden");
+        }
       }
 
     }).change();
 
+    //univercity select trigger
     $( "#universitySelect" ).change(function () {
       if($(this).val() != null) {
         //get subject array
@@ -262,33 +279,40 @@ $(document).ready(function() {
 
         //subjects = ["Math", "ComputerScience"];
         setOptions("subjectSelect", subjects);
+
+        //hide subfields
+        if ($('#subjectSelect').find(":selected").val() == 'empty') {
+          $("#subfieldsOptions").css("visibility", "hidden");
+        }
       }
 
     }).change();
 
 
-
+    //subject select trigger
     $( "#subjectSelect" ).change(function () {
-      alert();
       if($(this).val() != null) {
-        
-        $('#subfieldsBlock').attr("hidden", $('#subjectSelect').find(":selected").val() == 'empty');
+
+        $("#subfieldsOptions").css("visibility", "hidden");
         //get subsubject array
         if ($('#subjectSelect').find(":selected").val() != 'empty') {
-          var subsubjects = getSubsubjects(
+          $("#subfieldsOptions").css("visibility", "visible");
+
+          /*var subfields = getSubfields(
             $('#subjectSelect').find(":selected").val()
-          );
+          );*/
 
 
-          subsubjects = ["Computer", "Hyper", "Call", "Test", "Point"];
-          $('#subfieldsOptions').find('.container').remove();
+          var subfields = ["Computer", "Hyper", "Call", "Test", "Point"];
+          clearById('subfieldsOptions');
           
-          subsubjects.sort();
-          for (var i = 0; i < 5; i++) {
-            var s = '<label class="container">' + subjects[i];
-            s +=  '<input type="checkbox">';
+          subfields.sort();
+          for (var i = 0; i < (1000*Math.random())%subfields.length; i++) {
+            var s = '<label class="container">' + subfields[i];
+            s +=  '<input type="checkbox" value="'+ subfields[i] + '">';
             s +=  '<span class="checkmark"></span>';
             s += '</label>';
+
             $('#subfieldsOptions').append(s);
           }
         }
