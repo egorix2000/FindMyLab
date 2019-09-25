@@ -81,7 +81,7 @@ body {
 
 .optionSubmit input[type=submit] {
   position:absolute;
-  bottom: 0px;
+  bottom: 10px;
   right: 10px;
   background: #444444;
   border: 2px solid #ec6607;

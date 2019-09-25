@@ -8,6 +8,7 @@ function getCities() {
     function(data) {
       cities = data.cities;
     });
+  cities = ["Moscow", "Mexico"];
   return cities;
 }
 
@@ -41,6 +42,22 @@ function getSubjects(city, university) {
       subjects = data.subjects;
   });
   return subjects;
+}
+
+function getSubsubjects (subject) {
+    var subsubjects;
+    var dataToServer = JSON.stringify({
+        subject: subject,
+    });
+
+    $.post( 
+      url + "/subsubjects", 
+      dataToServer,
+      function(data) {
+        subsubjects = data.subsubjects;
+    });
+
+    return subsubjects;
 }
 
 function getTopLaboratories(city, university, subject, search) {
@@ -195,7 +212,7 @@ $(document).ready(function() {
     //get all subject array
     var all_subjects = getSubjects(
       $('#citySelect').find(":selected").val(),
-      $('#universitySelect').find(":selected").val(),
+      $('#universitySelect').find(":selected").val()
     );
 
     //var all_subjects = ["Math", "Physics", "Computer Science", "Algorithm", "Medicine", "Chemistry"];
@@ -226,7 +243,7 @@ $(document).ready(function() {
         //get subject array
         var subjects = getSubjects(
           $('#citySelect').find(":selected").val(),
-          $('#universitySelect').find(":selected").val(),
+          $('#universitySelect').find(":selected").val()
         );
 
         //subjects = ["Math", "ComputerScience"];
@@ -240,11 +257,41 @@ $(document).ready(function() {
         //get subject array
         var subjects = getSubjects(
           $('#citySelect').find(":selected").val(),
-          $('#universitySelect').find(":selected").val(),
+          $('#universitySelect').find(":selected").val()
         );
 
         //subjects = ["Math", "ComputerScience"];
         setOptions("subjectSelect", subjects);
+      }
+
+    }).change();
+
+
+
+    $( "#subjectSelect" ).change(function () {
+      alert();
+      if($(this).val() != null) {
+        
+        $('#subfieldsBlock').attr("hidden", $('#subjectSelect').find(":selected").val() == 'empty');
+        //get subsubject array
+        if ($('#subjectSelect').find(":selected").val() != 'empty') {
+          var subsubjects = getSubsubjects(
+            $('#subjectSelect').find(":selected").val()
+          );
+
+
+          subsubjects = ["Computer", "Hyper", "Call", "Test", "Point"];
+          $('#subfieldsOptions').find('.container').remove();
+          
+          subsubjects.sort();
+          for (var i = 0; i < 5; i++) {
+            var s = '<label class="container">' + subjects[i];
+            s +=  '<input type="checkbox">';
+            s +=  '<span class="checkmark"></span>';
+            s += '</label>';
+            $('#subfieldsOptions').append(s);
+          }
+        }
       }
 
     }).change();
