@@ -10,42 +10,40 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #DDDDDD;
-  color: #000000;
+  	font-family: Arial, Helvetica, sans-serif;
+  	background-color: #DDDDDD;
+  	color: #000000;
 }
 
 .header {
-  margin-left: 5%;
-  margin-right: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 .logo {
-    float: right;
+  	float: right;
 }
 
 .logo img {
-    width: 150px;
+  	width: 150px;
 }
 
-.findJob input[type=submit] {
-  margin-top: 10px;
-  background: #CCCCCC;
-  border: 2px solid #00A2FF;
-  border-radius: 7px;
-  cursor: pointer;
-  font-size: 20px;
-  text-align: center;
-  width: 300px;
-  height: 40px;
+.backToMain input[type=submit] {
+	margin-top: 10px;
+	background: #DDDDDD;
+	border: 2px solid #00A2FF;
+	border-radius: 7px;
+	cursor: pointer;
+	font-size: 20px;
+	text-align: center;
 }
 
-.findJob input[type=submit]:hover {
+.backToMain input[type=submit]:hover {
   box-shadow: 0 0 5px #00A2FF;
 }
 
-.findJob input[type=submit]:active {
-  background: #BBBBBB;
+.backToMain input[type=submit]:active {
+  background: #CCCCCC;
   color: #000000;
 }
 
@@ -54,7 +52,7 @@ body {
 }
 
 .search {
-  margin-top: 20px;
+  margin-top: 26px;
   margin-right: 5%;
   margin-left: 5%;
 }
@@ -94,7 +92,7 @@ body {
 }
 
 
-.topLabsColumn {
+.topVacanciesColumn {
   float: left;
   width: 60.66%;
   margin-left: 6%;
@@ -114,7 +112,7 @@ body {
 
 .optionSubmit input[type=submit] {
   position:absolute;
-  bottom: 0;
+  bottom: 15px;
   right: 15px;
   background: #DDDDDD;
   border: 2px solid #00A2FF;
@@ -152,19 +150,6 @@ body {
   position: relative;
 }
 
-#subfields {
-  margin-top: 20px;
-}
-
-#subfieldsOptions {
-  width: 100%;
-  margin-top: 10px; 
-  overflow-y: scroll;
-  top: 215px;
-  position: absolute;
-  bottom: 0;
-  visibility: hidden;
-}
 
 .textTopHeader {
   width: 100%;
@@ -182,53 +167,66 @@ body {
   bottom: 0;
 }
 
-.labItem {
+.vacancyItem {
   padding: 8px;
   border-top: 1px solid #00A2FF;
   border-bottom: 1px solid #00A2FF;
   background-color: #D5D5D5;
 }
 
-.labItem:hover {
-  background-color: #C8C8C8;
-  cursor: pointer;
-}
-
-.labName {
+.vacancyName {
   font-size: 20px;
 }
 
-.labName span {
+.vacancyName span {
   display: inline-block;
   border-bottom: 1px solid #00A2FF;
   padding-bottom: 1px;
 }
 
-.labUniversity {
+.vacancyUniversity {
   padding-top: 10px;
   padding-left: 7%;
 }
 
-.labUniversity span {
+.vacancyUniversity span {
   font-style: italic;
 }
 
-.labResearch {
+.vacancyEmail {
   padding-top: 10px;
   padding-left: 7%;
 }
 
-.labResearch ul {
+.vacancyEmail span {
+  font-style: italic;
+}
+
+.vacancyRequirements {
+  padding-top: 10px;
+  padding-left: 7%;
+}
+
+.vacancyRequirements ul {
   margin-top: 2px;
   list-style: none;
 }
 
-.labResearch ul li::before {
+.vacancyRequirements ul li::before {
   content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: #00A2FF; /* Change the color */
   font-weight: bold; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */
   margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.vacancyDescription {
+  padding-top: 10px;
+  padding-left: 7%;
+}
+
+.vacancyDescription span {
+  font-style: italic;
 }
 

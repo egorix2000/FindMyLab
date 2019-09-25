@@ -43,20 +43,20 @@ function getSubjects(city, university) {
   return subjects;
 }
 
-function getSubsubjects (subject) {
-    var subsubjects;
+function getSubfields (subject) {
+    var subfields;
     var dataToServer = JSON.stringify({
         subject: subject,
     });
 
     $.post( 
-      url + "/subsubjects", 
+      url + "/subfields", 
       dataToServer,
       function(data) {
-        subsubjects = data.subsubjects;
+        subfields = data.subfields;
     });
 
-    return subsubjects;
+    return subfields;
 }
 
 function getTopLaboratories(city, university, subject, search, subfields) {
@@ -174,16 +174,15 @@ function displayTop(topLabId) {
   $('#' + topLabId).empty();
 
   for (var i = 0; i < top.length; i++) {
-    labDiv = "<div class='topLabItem'>";
-    labDiv += "   <div class='topLabName'><span>" + top[i].name + "</span></div>";
-    labDiv += "   <div class='topUniversityName'>Organisation: <span>" + top[i].university + "</span></div>";
+    var labDiv = "<div class='labItem'>";
+    labDiv += "   <div class='labName'><span>" + top[i].name + "</span></div>";
+    labDiv += "   <div class='labUniversity'>Organisation: <span>" + top[i].university + "</span></div>";
 
     top[i].keywords = top[i].keywords.split(", ");
 
-    labDiv += "   <div class='topResearchName'>Research field: ";
+    labDiv += "   <div class='labResearch'>Research field: ";
     labDiv += "       <ul>";
     for (var keywordIndex = 0; keywordIndex < top[i].keywords.length; keywordIndex++) {
-      
       labDiv += "          <li>" + top[i].keywords[keywordIndex] + "</li>";
     }
     labDiv += "       </ul>";
@@ -193,7 +192,7 @@ function displayTop(topLabId) {
     $('#' + topLabId).append(labDiv);
   }
 
-  $('.topLabItem').on("click", function() {
+  $('.labItem').on("click", function() {
       window.location.href = 'laboratory.html';
   });
 
@@ -239,6 +238,10 @@ $(document).ready(function() {
 
     $("#findLabButton").click(function () {
       displayTop("topLabs");
+    });
+
+    $("#findJobButton").click(function () {
+      window.location.href = 'vacancies.html';
     });
 
     //city select triggen
@@ -294,7 +297,7 @@ $(document).ready(function() {
       if($(this).val() != null) {
 
         $("#subfieldsOptions").css("visibility", "hidden");
-        //get subsubject array
+        //get subfields array
         if ($('#subjectSelect').find(":selected").val() != 'empty') {
           $("#subfieldsOptions").css("visibility", "visible");
 
