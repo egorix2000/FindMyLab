@@ -145,14 +145,14 @@ $(document).ready(function() {
     //get all cities array
     //var all_cities = getCities();
 
-    var all_cities = ["New York", "Minsk", "Moscow", "Milan"];
+    var all_cities = ["New York", "Moscow", "Milan"];
     setOptions("citySelect", all_cities);
 
     //get all universities array
     //var all_universities = getUniversities(
     //  $('#citySelect').find(":selected").val());
 
-    var all_universities = ["MIT", "BSU", "BSUIR", "BSMU", "BSPU"];
+    var all_universities = ["MIT", "Skoltech"];
     setOptions("universitySelect", all_universities);
 
     //get all subject array
@@ -188,7 +188,7 @@ $(document).ready(function() {
         //var universities = getUniversities(
         //  $('#citySelect').find(":selected").val());
 
-        var universities = ["MIT", "BSU", "BSUIR", "Skoltech"];
+        var universities = ["MIT", "Skoltech"];
         setOptions("universitySelect", universities);
 
         //get subject array
@@ -197,7 +197,7 @@ $(document).ready(function() {
         //  $('#universitySelect').find(":selected").val()
         //);
 
-        var subjects = ["Math", "ComputerScience"];
+        var subjects = ["Computer Science", "Algorithm", "Medicine"];
         setOptions("subjectSelect", subjects);
       }
 
@@ -212,7 +212,7 @@ $(document).ready(function() {
         //  $('#universitySelect').find(":selected").val()
         //);
 
-        var subjects = ["Math", "ComputerScience"];
+        var subjects = ["Computer Science", "Algorithm", "Medicine"];
         setOptions("subjectSelect", subjects);
       }
 
