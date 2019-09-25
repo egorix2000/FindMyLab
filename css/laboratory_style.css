@@ -1,9 +1,3 @@
-:root {
-  	--backgroundDarkColor: #2C2C2C;
-  	--textColor: #FFFFFF;
-  	--orangeMainColor: #BE5301;
-}
-
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -12,7 +6,7 @@
 
 body {
   	font-family: Arial, Helvetica, sans-serif;
-  	background-color: var(--backgroundDarkColor);
+  	background-color: #2C2C2C;
 }
 
 .backToMain input[type=submit] {
@@ -22,7 +16,7 @@ body {
 	border: 1px solid #ec6607;
 	border-radius: 5px;
 	cursor: pointer;
-	color: var(--textColor);
+	color: #FFFFFF;
 	font-size: 20px;
 	text-align: center;
 }
@@ -40,12 +34,12 @@ body {
   	margin-left: 10%;
   	font-size: 36px;
   	padding: 20;
-  	color: var(--textColor);
+  	color: #FFFFFF;
 }
 
 .LabNameHeader span {
   	display: inline-block;
-  	border-bottom: 2px solid var(--orangeMainColor);
+  	border-bottom: 2px solid #BE5301;
   	padding-bottom: 1px;
 }
 
@@ -64,15 +58,15 @@ body {
 .labInfo {
 	float: left;
   	width: 67%;
-  	color: var(--textColor);
+  	color: #FFFFFF;
 }
 
 .labHeadInfo {
 	float: left;
   	width: 30%;
   	padding-left: 3%;
-  	border-left: 2px solid var(--orangeMainColor);
-  	color: var(--textColor);
+  	border-left: 2px solid #BE5301;
+  	color: #FFFFFF;
 }
 
 #headHeader {
@@ -117,7 +111,7 @@ body {
 }
 
 hr {
-	border: 1px solid var(--orangeMainColor);
+	border: 1px solid #BE5301;
 	width: 60%;
 	margin-top: 30px;
 }
@@ -125,11 +119,11 @@ hr {
 .gallery {
 	margin-left: 5%;
 	margin-top: 30px;
-  	color: var(--textColor);
+  	color: #FFFFFF;
 }
 
 .galleryHeader {
-  	color: var(--textColor);
+  	color: #FFFFFF;
  }
 
 .gallery-image{
