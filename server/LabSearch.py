@@ -14,7 +14,7 @@ from flask import request, jsonify
 
 #app.secret_key = b'\x99\xa4\x11\xdc\xe5\xef\xac\xf3\x1f"(\x8bD]"\xf7'
 
-lab_data = pd.read_csv(str('/Users/fritz/IW/LabSearch/labdata.csv'), index_col=0, header=None).T
+lab_data = pd.read_csv(str('labdata.csv'), index_col=0, header=None).T
 
 lab_data['city'] = 'Moscow' # It's not in the database now
 

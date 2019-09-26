@@ -46,7 +46,7 @@ function getSubjects(city, university) {
 function getSubfields (subject) {
     var subfields;
     var dataToServer = JSON.stringify({
-        subject: subject,
+        field: subject,
     });
 
     $.post( 
@@ -55,7 +55,6 @@ function getSubfields (subject) {
       function(data) {
         subfields = data.subfields;
     });
-
     return subfields;
 }
 
@@ -301,16 +300,15 @@ $(document).ready(function() {
         if ($('#subjectSelect').find(":selected").val() != 'empty') {
           $("#subfieldsOptions").css("visibility", "visible");
 
-          /*var subfields = getSubfields(
+          var subfields = getSubfields(
             $('#subjectSelect').find(":selected").val()
-          );*/
+          );
 
-
-          var subfields = ["Computer", "Hyper", "Call", "Test", "Point"];
+          //var subfields = ["Computer", "Hyper", "Call", "Test", "Point"];
           clearById('subfieldsOptions');
           
           subfields.sort();
-          for (var i = 0; i < (1000*Math.random())%subfields.length; i++) {
+          for (var i = 0; i < subfields.length; i++) {
             var s = '<label class="container">' + subfields[i];
             s +=  '<input type="checkbox" value="'+ subfields[i] + '">';
             s +=  '<span class="checkmark"></span>';
