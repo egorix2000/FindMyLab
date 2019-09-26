@@ -21,8 +21,7 @@ start_date,15.07.19,06.16,01.16,02.17,06.16,04.19,08.18,,,,,,01.17,03.13,2016,,,
 "organisation",Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,Skoltech,
 department,Life Sciences,Life Sciences,Life Sciences,Life Sciences,Life Sciences,Life Sciences,Life Sciences,,,,,,Life Sciences,Life Sciences,Center for Computational and Data-Intensive Science and Engineering,Advanced Manufacturing Technologies,Center for Computational and Data-Intensive Science and Engineering,Advanced Manufacturing Technologies,Advanced Manufacturing Technologies,Advanced Manufacturing Technologies
 "field",biology,biology,biology,biology,biology,"biology, physics",,"physics, material science",physics,"physics, biology",physics,biology,biology,biology,Data Science ,physics,Data Science ,physics,physics,
-"subfield
-(molbiology,bioinformatics...)",bioinformatics,"bioinformatics, evolution","bioinformatics, evolution","molecular biology, bioinformatics",molecular biology,bioinformatics,,,photonics,"biophysics, medical physics",photonics,"molecular biology, bioinformatics
+"subfield",bioinformatics,"bioinformatics, evolution","bioinformatics, evolution","molecular biology, bioinformatics",molecular biology,bioinformatics,,,photonics,"biophysics, medical physics",photonics,"molecular biology, bioinformatics
 ",molecular biology,molecular biology,"Modelling of surrogates, Processing of 3D data
 Processing of online data",Composite materials,"Deep learning in communications.
 Coding for distributed and cloud storage systems.
