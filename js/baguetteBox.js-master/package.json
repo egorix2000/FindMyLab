@@ -25,7 +25,7 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "~2.23.5",
-    "gulp": "~3.9.0",
+    "gulp": "~4.0.2",
     "gulp-autoprefixer": "~4.1.0",
     "gulp-bump": "~3.0.0",
     "gulp-concat": "~2.6.1",
